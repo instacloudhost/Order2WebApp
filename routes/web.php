@@ -31,6 +31,8 @@ Route::get('payments/paypal/express-checkout-success', 'PayPalController@getExpr
 Route::get('payments/paypal', 'PayPalController@index')->name('paypal.index');
 
 Route::get('firebase/sw-js', 'AppSettingController@initFirebase');
+// Route::resource('itemcategories', 'ItemCategoryController') ->except(['show']);
+
 
 
 Route::get('storage/app/public/{id}/{conversion}/{filename?}', 'UploadController@storage');
@@ -88,14 +90,10 @@ Route::middleware('auth')->group(function () {
 
     Route::post('restaurants/remove-media', 'RestaurantController@removeMedia');
     Route::get('requestedRestaurants', 'RestaurantController@requestedRestaurants')->name('requestedRestaurants.index'); //adeed
-    Route::resource('restaurants', 'RestaurantController')->except([
-        'show'
-    ]);
+    Route::resource('restaurants', 'RestaurantController')->except(['show']);
 
     Route::post('categories/remove-media', 'CategoryController@removeMedia');
-    Route::resource('categories', 'CategoryController')->except([
-        'show'
-    ]);
+    Route::resource('categories','CategoryController')->except(['show']);
 
     Route::resource('faqCategories', 'FaqCategoryController')->except([
         'show'
@@ -120,6 +118,8 @@ Route::middleware('auth')->group(function () {
     ]);
 
 
+
+
     Route::resource('nutrition', 'NutritionController')->except([
         'show'
     ]);
@@ -129,11 +129,19 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('payments', 'PaymentController')->except([
         'create', 'store', 'edit', 'destroy'
-    ]);;
+    ]);
 
     Route::resource('faqs', 'FaqController')->except([
         'show'
     ]);
+
+
+    // Tanmaye
+    Route::resource('itemcategories', 'ItemCategoryController')->except(['show']);
+    Route::resource('items', 'ItemController')->except(['show']);
+    //  End Here
+
+
     Route::resource('restaurantReviews', 'RestaurantReviewController')->except([
         'show'
     ]);
@@ -176,6 +184,8 @@ Route::middleware('auth')->group(function () {
     ]);
 
     Route::post('extras/remove-media', 'ExtraController@removeMedia');
+
+    Route:
 
     Route::resource('extras', 'ExtraController')->except([
         'show'
