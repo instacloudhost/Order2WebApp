@@ -38,16 +38,22 @@ Route::prefix('manager')->group(function () {
 
 Route::post('login', 'API\UserAPIController@login');
 Route::post('register', 'API\UserAPIController@register');
-Route::post('send_reset_link_email', 'API\UserAPIController@sendResetLinkEmail');
-Route::get('user', 'API\UserAPIController@user');
-Route::get('logout', 'API\UserAPIController@logout');
-Route::get('settings', 'API\UserAPIController@settings');
 
 /* Tanmaya create function start*/
 Route::post('manager', 'API\UserAPIController@manager');
 Route::post('fooditem', 'API\FoodAPIController@fooditem');
+Route::post('restaurantbyagentid', 'API\RestaurantAPIController@restaurantbyagentid');
+Route::post('useresturant', 'API\RestaurantAPIController@useresturant');
+
+Route::resource('itemcategories', 'API\ItemCategoryAPIController');
+Route::resource('items', 'API\ItemAPIController');
 /* Tanmaya create function End*/
 
+
+Route::post('send_reset_link_email', 'API\UserAPIController@sendResetLinkEmail');
+Route::get('user', 'API\UserAPIController@user');
+Route::get('logout', 'API\UserAPIController@logout');
+Route::get('settings', 'API\UserAPIController@settings');
 
 Route::resource('cuisines', 'API\CuisineAPIController');
 Route::resource('categories', 'API\CategoryAPIController');
