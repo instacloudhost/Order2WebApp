@@ -973,6 +973,18 @@ return [
     'cuisine_restaurants_help' => 'Insert Restaurants',
     'cuisine_restaurants_placeholder' => 'Insert Restaurants',
     'cuisine_updated_at' => 'Updated At',
+    'items' => 'Items',
+    'items_plural' => 'Items',
+    'items_desc' => 'Items Management',
+    'items_edit' => 'Edit Items',
+    'items_table' => 'Items List',
+    'items_create' => 'Create Items',
+    'itemcategory' => 'Item Category',
+    'itemcategory_plural' => 'Item Categories',
+    'itemcategory_desc' => 'Item Categories Management',
+    'itemcategory_edit' => 'Edit Item Category',
+    'itemcategory_table' => 'Item Categories List',
+    'itemcategory_create' => 'Create Item Category',
     'category' => 'Category',
     'category_plural' => 'Categories',
     'category_desc' => 'Categories Management',
@@ -1152,4 +1164,8 @@ return [
     'app_setting_mobile_popular' => 'Popular restaurants grid',
     'app_setting_mobile_recent_reviews_heading' => 'Recent reviews heading',
     'app_setting_mobile_recent_reviews' => 'Recent reviews list',
+
+    // Custom Entries...
+    'items_input_name' => 'Item Category',
+    'items_input_hint' => 'Select Item Category',
 ];

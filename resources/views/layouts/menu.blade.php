@@ -1,7 +1,7 @@
 @can('dashboard')
     <li class="nav-item">
         <a class="nav-link {{ Request::is('dashboard*') ? 'active' : '' }}" href="{!! url('dashboard') !!}">@if($icons)
-                <i class="nav-icon fa fa-dashboard"></i>@endif
+             <i class="nav-icon fa fa-dashboard"></i>@endif
             <p>{{trans('lang.dashboard')}}</p></a>
     </li>
 @endcan
@@ -9,7 +9,7 @@
 @can('favorites.index')
     <li class="nav-item">
         <a class="nav-link {{ Request::is('favorites*') ? 'active' : '' }}" href="{!! route('favorites.index') !!}">@if($icons)
-                <i class="nav-icon fa fa-heart"></i>@endif<p>{{trans('lang.favorite_plural')}}</p></a>
+            <i class="nav-icon fa fa-heart"></i>@endif<p>{{trans('lang.favorite_plural')}}</p></a>
     </li>
 @endcan
 
@@ -18,7 +18,7 @@
 @can('cuisines.index')
     <li class="nav-item">
         <a class="nav-link {{ Request::is('cuisines*') ? 'active' : '' }}" href="{!! route('cuisines.index') !!}">@if($icons)
-                <i class="nav-icon fa fa-globe"></i>@endif<p>{{trans('lang.cuisine_plural')}}</p></a>
+            <i class="nav-icon fa fa-globe"></i>@endif<p>{{trans('lang.cuisine_plural')}}</p></a>
     </li>
 @endcan
 
@@ -43,26 +43,55 @@
             @can('galleries.index')
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('galleries*') ? 'active' : '' }}" href="{!! route('galleries.index') !!}">@if($icons)
-                            <i class="nav-icon fa fa-image"></i>@endif<p>{{trans('lang.gallery_plural')}}</p></a>
+                        <i class="nav-icon fa fa-image"></i>@endif<p>{{trans('lang.gallery_plural')}}</p></a>
                 </li>
             @endcan
             @can('restaurantReviews.index')
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('restaurantReviews*') ? 'active' : '' }}" href="{!! route('restaurantReviews.index') !!}">@if($icons)
-                            <i class="nav-icon fa fa-comments"></i>@endif<p>{{trans('lang.restaurant_review_plural')}}</p></a>
+                        <i class="nav-icon fa fa-comments"></i>@endif<p>{{trans('lang.restaurant_review_plural')}}</p></a>
                 </li>
             @endcan
         </ul>
     </li>
 @endcan
 
-@can('categories.index')
+<!-- @can('categories.index')
     <li class="nav-item">
         <a class="nav-link {{ Request::is('categories*') ? 'active' : '' }}" href="{!! route('categories.index') !!}">@if($icons)
                 <i class="nav-icon fa fa-folder"></i>@endif<p>{{trans('lang.category_plural')}}</p></a>
     </li>
-@endcan
+@endcan -->
 
+@can('categories.index')
+    <li class="nav-item has-treeview {{ Request::is('categories*') || Request::is('categories*') ? 'menu-open' : '' }}">
+        <a href="#" class="nav-link {{ Request::is('categories*') || Request::is('categories*') ? 'active' : '' }}"> @if($icons)
+                <i class="nav-icon fa fa-folder"></i>@endif
+            <p>{{trans('lang.category_plural')}} <i class="right fa fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+           <li class="nav-item">
+                <a class="nav-link {{ Request::is('categories*') ? 'active' : '' }}" href="{!! route('categories.index') !!}">@if($icons)
+                    <i class="nav-icon fa fa-folder"></i>@endif<p>{{trans('lang.category_plural')}}</p></a>
+            </li>
+            @can('itemcategories.index')
+            <li class="nav-item"> 
+                <a class="nav-link {{ Request::is('itemcategories*') ? 'active' : '' }}" href="{!! route('itemcategories.index') !!}">
+                     <i class="nav-icon fa fa-tasks"></i>
+                    <p>Item Category</p></a>
+            </li>
+            @endcan
+            @can('items.index')
+            <li class="nav-item"> 
+                <a class="nav-link {{ Request::is('items*') ? 'active' : '' }}" href="{!! route('items.index') !!}">
+                     <i class="nav-icon fa fa-tasks"></i>
+                    <p>Itemes</p></a>
+            </li>
+           @endcan
+        </ul>
+    </li>
+@endcan
 @can('foods.index')
     <li class="nav-item has-treeview {{ Request::is('foods*') || Request::is('extra*') || Request::is('foodReviews*') || Request::is('nutrition*') ? 'menu-open' : '' }}">
         <a href="#" class="nav-link {{ Request::is('foods*') || Request::is('extra*') || Request::is('foodReviews*') || Request::is('nutrition*') ? 'active' : '' }}"> @if($icons)
@@ -74,7 +103,7 @@
             @can('foods.index')
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('foods*') ? 'active' : '' }}" href="{!! route('foods.index') !!}">@if($icons)
-                            <i class="nav-icon fa fa-fire"></i>@endif
+                        <i class="nav-icon fa fa-fire"></i>@endif
                         <p>{{trans('lang.food_plural')}}</p></a>
                 </li>
             @endcan
@@ -87,14 +116,14 @@
             @can('extras.index')
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('extras*') ? 'active' : '' }}" href="{!! route('extras.index') !!}">@if($icons)
-                            <i class="nav-icon fa fa-plus-circle"></i>@endif<p>{{trans('lang.extra_plural')}}</p></a>
+                        <i class="nav-icon fa fa-plus-circle"></i>@endif<p>{{trans('lang.extra_plural')}}</p></a>
                 </li>
             @endcan
 
             @can('foodReviews.index')
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('foodReviews*') ? 'active' : '' }}" href="{!! route('foodReviews.index') !!}">@if($icons)
-                            <i class="nav-icon fa fa-comments"></i>@endif<p>{{trans('lang.food_review_plural')}}</p></a>
+                        <i class="nav-icon fa fa-comments"></i>@endif<p>{{trans('lang.food_review_plural')}}</p></a>
                 </li>
             @endcan
 
