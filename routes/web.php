@@ -197,5 +197,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('slides', 'SlideController')->except([
         'show'
     ]);
+    
+
+    // Custom Menus
+    Route::resource('insurance', 'InsuranceController');
+    Route::resource('services', 'ServicesController');
 });
 

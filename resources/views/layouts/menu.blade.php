@@ -210,6 +210,30 @@
     </li>
 @endcan
 
+@can('services.index')
+    <li class="nav-item has-treeview {{ Request::is('insurance*') || Request::is('services*') ? 'menu-open' : '' }}">
+        <a href="#" class="nav-link {{ Request::is('services*') || Request::is('insurance*') ? 'active' : '' }}"> @if($icons)
+                <i class="nav-icon fa fa-support"></i>@endif
+            <p>{{trans('lang.insurance_plural')}} <i class="right fa fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            @can('insurance.index')
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('insurance*') ? 'active' : '' }}" href="{!! route('insurance.index') !!}">@if($icons)
+                            <i class="nav-icon fa fa-folder"></i>@endif<p>{{trans('lang.insurance_plural')}}</p></a>
+                </li>
+            @endcan
+            @can('services.index')
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('services*') ? 'active' : '' }}" href="{!! route('services.index') !!}">@if($icons)
+                            <i class="nav-icon fa fa-folder"></i>@endif<p>{{trans('lang.services_plural')}}</p></a>
+                </li>
+            @endcan
+        </ul>
+    </li>
+@endcan
+
 <li class="nav-header">{{trans('lang.app_setting')}}</li>
 @can('medias')
     <li class="nav-item">
