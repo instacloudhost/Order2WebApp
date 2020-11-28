@@ -127,3 +127,7 @@ Route::middleware('auth:api')->group(function () {
         'show'
     ]);
 });
+
+// Custom API
+Route::resource('services', 'API\ServiceAPIController');
+Route::resource('insurance', 'API\InsuranceAPIController');
