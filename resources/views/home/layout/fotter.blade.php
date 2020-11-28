@@ -4,7 +4,7 @@
     <title></title>
 </head>
 <body>
-    @include('home.style')    
+    @include('home.style')
  <!--footer area start-->
     <footer class="footer_widgets">
         <div class="footer_top">
@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-        </div>   
+        </div>
     </footer>
     <!--footer area end-->
     </body>
