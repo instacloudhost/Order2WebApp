@@ -16,7 +16,23 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','HomeController@homes');
+Route::get('termsconditions','HomeController@termsconditions');
 
+Route::get('teams','HomeController@team');
+
+Route::get('ride','HomeController@ride');
+Route::get('refund','HomeController@refund');
+Route::get('privacy','HomeController@privacy');
+Route::get('partner','HomeController@partner');
+Route::get('login','HomeController@login');
+Route::get('item','HomeController@item');
+Route::get('help','HomeController@help');
+Route::get('careers','HomeController@careers');
+
+
+Route::get('aboutus','HomeController@about');
+Route::get('career','HomeController@careers');
 Route::get('login/{service}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{service}/callback', 'Auth\LoginController@handleProviderCallback');
 Auth::routes();
@@ -38,7 +54,8 @@ Route::get('firebase/sw-js', 'AppSettingController@initFirebase');
 Route::get('storage/app/public/{id}/{conversion}/{filename?}', 'UploadController@storage');
 Route::middleware('auth')->group(function () {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-    Route::get('/', 'DashboardController@index')->name('dashboard');
+    //Route::get('/', 'DashboardController@index')->name('dashboard');
+
 
     Route::post('uploads/store', 'UploadController@store')->name('medias.create');
     Route::get('users/profile', 'UserController@profile')->name('users.profile');
@@ -94,7 +111,6 @@ Route::middleware('auth')->group(function () {
 
     Route::post('categories/remove-media', 'CategoryController@removeMedia');
     Route::resource('categories','CategoryController')->except(['show']);
-
     Route::resource('faqCategories', 'FaqCategoryController')->except([
         'show'
     ]);
@@ -197,10 +213,13 @@ Route::middleware('auth')->group(function () {
     Route::resource('slides', 'SlideController')->except([
         'show'
     ]);
-    
 
     // Custom Menus
     Route::resource('insurance', 'InsuranceController');
     Route::resource('services', 'ServicesController');
 });
+
+// // Custom Menus
+//     Route::resource('insurance', 'InsuranceController')->except(['show']);
+//     Route::resource('services', 'ServicesController')->except(['show']);
 
