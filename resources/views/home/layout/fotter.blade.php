@@ -15,11 +15,20 @@
                            <div class="footer_logo">
                                <a href="index.html"><img src="<?php echo url('assets/img/logo/logo1.png') ?>"></a>
                            </div>
-                           <p class="footer_desc">Leapsome enhances meaningful feedback and employee engagement. It’s a must-have for every company at any stage. We are growing toward 750 employees, but the rollout was easy, fast, and successful nonetheless. The great customer support helped us through the whole onboarding process.</p>
+                           <p class="footer_desc">ORDER2 is a group of Youthful and experienced individuals aiming at improving and enhancing the automation process of delivering daily essential at the door steps of our customers at a affordable price and pocket friendly delivery charges.</p>
                             <p><span>Address:</span>K-8/1102,KALINGA NAGAR,BACKSIDE OF SUM HOSPITAL,BHUBANESWAR</p>
-                            <p><span>Email:</span> <a href="#">support@order2.com</a></p>
-                            <p><span>Call us:</span> <a href="tel:(08)23456789">000000</a> </p>
-                        </div>          
+                            <p><span>Email:</span> <a href="#">support@order2.in</a></p>
+                            <!-- <p><span>Call us:</span> <a href="tel:(08)23456789">000000</a> </p> -->
+                        </div>
+                        <div class="header_social mt-4">
+                            <ul>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-googleplus-outline"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-5">
                         <div class="widgets_container widget_menu">
@@ -76,8 +85,8 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-7">
-                        <div class="copyright_area">
-                            <h3>@ 2020 order2</h3>
+                        <div class="copyright_area text-white">
+                            <h4>&copy; 2020. All Right Reserved. Powered By: <a href="<?php echo url('/') ?>">Order2</a></h4>
                         </div>
                     </div>    
                     <div class="col-lg-6 col-md-5">    
@@ -89,16 +98,6 @@
                                 <li><a href="#"><img src="assets/img/icon/paypal4.jpg" alt=""></a></li>
                             </ul>
                         </div>
-                         <div class="header_social text-right">
-                            <ul>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-googleplus-outline"></i></a></li>
-                                <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
-                            </ul>
-                        </div>
-
                     </div>
                 </div>
             </div>
